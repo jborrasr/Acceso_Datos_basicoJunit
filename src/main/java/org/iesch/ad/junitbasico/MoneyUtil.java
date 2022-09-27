@@ -6,15 +6,8 @@ public class MoneyUtil {
 
     public static String format(double money){
         String simbolo = "$";
+        return format(money,simbolo);
 
-
-        if (money < 0) {
-            simbolo = "-$";
-            money = money  * (-1);
-
-        }
-        BigDecimal rounded = BigDecimal.valueOf(money).setScale(2, BigDecimal.ROUND_HALF_UP);
-        return simbolo + rounded;
     }
 
     public static String format(double money, String symbol){
@@ -26,7 +19,7 @@ public class MoneyUtil {
 
         }
         BigDecimal rounded = BigDecimal.valueOf(money).setScale(2, BigDecimal.ROUND_HALF_UP);
-        return simbolo + rounded;
+        return symbol + rounded;
     }
 
 

@@ -25,4 +25,11 @@ class MoneyUtilTest {
         assertEquals("-€1000.00", money);
 
     }
+
+    @Test //(expected = IllegalArgumentException.class)
+    void testnotNullExcepcionMoneyTest(){
+        String money = MoneyUtil.format(-1000, null);
+        assertEquals("-$1000.00", money);
+
+    }
 }
