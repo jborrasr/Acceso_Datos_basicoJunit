@@ -11,4 +11,18 @@ class MoneyUtilTest {
         String money = MoneyUtil.format(1000);
         assertEquals("$1000.00", money);
     }
+
+    @Test
+    public void negativeMoneyTest(){
+        String money = MoneyUtil.format(-1000);
+        assertEquals("-$1000.00", money);
+
+    }
+
+    @Test
+    void testSymbolFormat() {
+        String money = MoneyUtil.format(-1000.00, "€");
+        assertEquals("-€1000.00", money);
+
+    }
 }
